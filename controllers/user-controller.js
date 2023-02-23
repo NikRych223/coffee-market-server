@@ -15,7 +15,7 @@ class UserController {
             if (username === userAuth.username && password === userAuth.password ) {
                 
                 // create acceess token
-                const accessToken = jwt.sign({username: username}, 'coffee', {expiresIn: '10m'});
+                const accessToken = jwt.sign({username: username}, 'coffee', {expiresIn: '30m'});
 
                 // create refresh token
                 const refreshToken = jwt.sign({username: username}, 'coffee', {expiresIn: '1d'});
@@ -43,7 +43,7 @@ class UserController {
             const decodedToken = jwt.verify(refreshToken, 'coffee');
 
             // generete new access token
-            const accessToken = jwt.sign({username: userAuth.username}, 'coffee', {expiresIn: '1d'});
+            const accessToken = jwt.sign({username: userAuth.username}, 'coffee', {expiresIn: '1h'});
 
             // return new token to client
             return res.json({accessToken});
