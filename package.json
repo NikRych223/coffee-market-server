@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NikRych223/coffee-market-server#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.2"

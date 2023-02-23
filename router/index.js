@@ -6,6 +6,7 @@ const userLogginedMiddleware = require('../middleware/authMiddleware');
 const router = new Router();
 
 router.post('/user/login', UserController.login);
+router.post('/user/refresh', UserController.refresh);
 router.post('/market/item', userLogginedMiddleware, MarketController.addItem);
 router.get('/market/item', MarketController.getItems);
 router.get('/market/item/:id', MarketController.getItemById);
